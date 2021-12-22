@@ -1,0 +1,50 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'coverage/**/*'
+    - 'db/**/*'
+    - 'lib/**/*'
+    - 'log/**/*'
+    - 'node_modules/**/*'
+    - 'public/**/*'
+    - 'spec/factories/*'
+    - 'spec/rails_helper.rb'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - './*'
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Naming/VariableNumber:
+  EnforcedStyle: 'snake_case'
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/Capybara/FeatureMethods:
+  EnabledMethods:
+    - 'scenario'
+
+RSpec/DescribedClass:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 4
+
+RSpec/MultipleExpectations:
+  Enabled: false
