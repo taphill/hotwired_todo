@@ -1,26 +1,53 @@
 <%= turbo_frame_tag 'main-content' do %>
   <%= form_with(model: @user) do |form| %>
     <% if @user.errors.any? %>
-      <div class="error-explanation">
-        <ul>
-          <% @user.errors.uniq.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
+      <div class="error-explanation" data-controller="error">
+        <div>
+          <ul>
+            <% @user.errors.uniq.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div>
+          <%= image_tag('close_button_grey.png', data: { action: 'click->error#remove'}) %>
+        </div>
       </div>
     <% end %>
 
     <%= form.label :username %>
     <%= form.text_field :username %>
 
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+    <div class="password-field" data-controller="password">
+      <%= form.label :password %>
+      <%= form.password_field :password, data: { password_target: 'password', action: 'password#verify'} %>
+    </div>
 
     <%= form.label :password_confirmation %>
     <%= form.password_field :password_confirmation %>
 
     <%= form.submit 'Create account' %>
   <% end %>
+
+  <div class="password-explanation">
+    <h1>Password must:</h1>
+    <div>
+      <%= image_tag('cancel.png', id: 'img-1') %>
+      <p><strong>Be between 8 to 72 characters long</strong></p>
+    </div>
+    <div>
+      <%= image_tag('cancel.png', id: 'img-2') %>
+      <p><strong>Have at least 1 uppercase character</strong></p>
+    </div>
+    <div>
+      <%= image_tag('cancel.png', id: 'img-3') %>
+      <p><strong>Have at least 1 lowercase character</strong></p>
+    </div>
+    <div>
+      <%= image_tag('cancel.png', id: 'img-4') %>
+      <p><strong>Have at least 1 special character #?!@$%^&*-</strong></p>
+    </div>
+  </div>
 
   <div class="redirect">
     Already have an account? <%= link_to('Sign in', '/') %>

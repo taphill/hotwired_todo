@@ -9,10 +9,10 @@ RSpec.describe 'User can sign in', type: :feature do
 
   context 'when successful' do
     it 'signs the user in' do
-      user = create(:user, password: 'password', password_confirmation: 'password')
+      user = create(:user, password: 'Password!', password_confirmation: 'Password!')
 
       fill_in :username, with: user.username
-      fill_in :password, with: 'password'
+      fill_in :password, with: user.password
 
       click_button 'Sign in'
 
@@ -35,7 +35,7 @@ RSpec.describe 'User can sign in', type: :feature do
 
   context 'when password is wrong' do
     it 'displays error' do
-      user = create(:user, password: 'password', password_confirmation: 'password')
+      user = create(:user, password: 'Password!', password_confirmation: 'Password!')
 
       fill_in :username, with: user.username
       fill_in :password, with: 'pass'

@@ -1,7 +1,10 @@
 .error-explanation {
-  margin: 1rem 2rem;
-  background-color: var(--error);
+  display: flex;
+  justify-content: space-between;
   border-radius: 0.4rem;
+  margin: 1rem 0;
+  width: 100%;
+  background-color: var(--error);
 }
 
 .error-explanation ul {
@@ -12,6 +15,12 @@
 
 .error-explanation li {
   color: white;
+}
+
+.error-explanation img {
+  width: 2rem;
+  margin: 0.4rem;
+  cursor: pointer;
 }
 
 .field_with_errors * {

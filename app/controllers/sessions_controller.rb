@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     if @user.present? && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      render 'root/show'
+      redirect_to '/'
     else
       flash.now[:error] = 'Incorrect username or password'
       render 'root/index', status: :unprocessable_entity

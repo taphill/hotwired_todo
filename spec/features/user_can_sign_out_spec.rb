@@ -9,7 +9,7 @@ RSpec.describe 'User can sign out', type: :feature do
     visit '/'
 
     fill_in :username, with: user.username
-    fill_in :password, with: 'password'
+    fill_in :password, with: user.password
 
     click_button 'Sign in'
   end
