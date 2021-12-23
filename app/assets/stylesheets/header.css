@@ -1,0 +1,31 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem;
+}
+
+header img {
+  width: 2rem;
+  margin-right: .2rem;
+}
+
+header p {
+  font-weight: bold;
+  color: var(--text);
+}
+
+header div {
+  display: flex;
+  align-items: center;
+}
+
+header .username {
+  margin: 0 1rem 0 0;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}

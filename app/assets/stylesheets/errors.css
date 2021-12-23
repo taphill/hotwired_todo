@@ -1,0 +1,19 @@
+.error-explanation {
+  margin: 1rem 2rem;
+  background-color: var(--error);
+  border-radius: 0.4rem;
+}
+
+.error-explanation ul {
+  list-style-type: circle;
+  margin: 0.5rem;
+  padding: 0 1.5rem;
+}
+
+.error-explanation li {
+  color: white;
+}
+
+.field_with_errors * {
+  width: 100%;
+}

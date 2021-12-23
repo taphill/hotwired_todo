@@ -1,0 +1,23 @@
+<%= turbo_frame_tag 'main-content' do %>
+  <%= form_with(url: '/signin') do |form| %>
+    <% if flash.any? %>
+      <div class="error-explanation">
+        <ul>
+          <li><%= flash[:error] %></li>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+
+    <%= form.submit 'Sign in' %>
+  <% end %>
+
+  <div class="redirect">
+    New user? <%= link_to('Register now', '/signup') %>
+  </div>
+<% end %>

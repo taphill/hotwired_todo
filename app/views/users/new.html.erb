@@ -1,0 +1,28 @@
+<%= turbo_frame_tag 'main-content' do %>
+  <%= form_with(model: @user) do |form| %>
+    <% if @user.errors.any? %>
+      <div class="error-explanation">
+        <ul>
+          <% @user.errors.uniq.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+
+    <%= form.submit 'Create account' %>
+  <% end %>
+
+  <div class="redirect">
+    Already have an account? <%= link_to('Sign in', '/') %>
+  </div>
+<% end %>

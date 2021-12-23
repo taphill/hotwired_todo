@@ -1,0 +1,4 @@
+<% if current_user %>
+  <p>Hello, <%= current_user.username %>!</p>
+  <%= button_to('Sign out', "/sessions/#{current_user.id}", method: :delete) %>
+<% end %>

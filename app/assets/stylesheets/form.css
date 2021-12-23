@@ -1,0 +1,16 @@
+/* .form { */
+/*   margin: 4rem 0; */
+/*   background-color: var(--disabled); */
+/*   clip-path: polygon(5% 10%, 46% 1%, 46% 10%, 100% 0, 95% 90%, 31% 100%, 31% 90%, 0% 100%); */
+/* } */
+
+#main-content form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 8rem 0 0 0;
+}
+
+#main-content .redirect {
+  margin: 4rem;
+}
