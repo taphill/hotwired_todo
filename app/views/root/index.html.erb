@@ -1,16 +1,7 @@
 <%= turbo_frame_tag 'main-content' do %>
   <%= form_with(url: '/signin') do |form| %>
     <% if flash.any? %>
-      <div class="error-explanation" data-controller="error">
-        <div>
-          <ul>
-            <li><%= flash[:error] %></li>
-          </ul>
-        </div>
-        <div>
-          <%= image_tag('close_button_grey.png', data: { action: 'click->error#remove'}) %>
-        </div>
-      </div>
+      <%= render(ErrorExplainerComponent.new(errors: [flash[:error]])) %>
     <% end %>
 
     <%= form.label :username %>

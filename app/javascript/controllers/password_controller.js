@@ -47,10 +47,10 @@ export default class extends Controller {
   }
 
   get imageSwitch() {
-    const element1 = document.getElementById('img-1')
-    const element2 = document.getElementById('img-2')
-    const element3 = document.getElementById('img-3')
-    const element4 = document.getElementById('img-4')
+    const element1 = document.getElementById('password-img-1')
+    const element2 = document.getElementById('password-img-2')
+    const element3 = document.getElementById('password-img-3')
+    const element4 = document.getElementById('password-img-4')
 
     this.imageSrc(this.hasValidLength, element1)
     this.imageSrc(this.hasUpperCaseCharacter, element2)
@@ -60,9 +60,9 @@ export default class extends Controller {
 
   imageSrc(conditon, imageElement) {
     if (conditon) {
-      imageElement.src = '/assets/accept'
+      imageElement.src = '/accept.png'
     } else {
-      imageElement.src = '/assets/cancel'
+      imageElement.src = '/cancel.png'
     }
   }
 }

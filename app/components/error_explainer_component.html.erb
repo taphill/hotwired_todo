@@ -1,0 +1,12 @@
+<div class="error-explanation" data-controller="error">
+  <div>
+    <ul>
+      <% errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div>
+    <%= image_tag('close_button_grey.png', data: { action: 'click->error#remove'}) %>
+  </div>
+</div>
