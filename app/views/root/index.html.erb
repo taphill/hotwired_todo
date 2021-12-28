@@ -1,5 +1,5 @@
-<%= turbo_frame_tag 'main-content' do %>
-  <%= form_with(url: '/signin') do |form| %>
+<turbo-frame id="main-content">
+  <%= form_with(url: '/signin', class: 'signin-signup-form') do |form| %>
     <% if flash.any? %>
       <%= render(ErrorExplainerComponent.new(errors: [flash[:error]])) %>
     <% end %>
@@ -16,4 +16,4 @@
   <div class="redirect">
     New user? <%= link_to('Register now', '/signup') %>
   </div>
-<% end %>
+</turbo-frame>

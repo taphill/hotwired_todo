@@ -1,5 +1,5 @@
-<%= turbo_frame_tag 'main-content' do %>
-  <%= form_with(model: @user) do |form| %>
+<turbo-frame id="main-content">
+  <%= form_with(model: @user, class: 'signin-signup-form') do |form| %>
     <% if @user.errors.any? %>
       <%= render(ErrorExplainerComponent.new(errors: @user.errors.uniq.map(&:full_message))) %>
     <% end %>
@@ -57,4 +57,4 @@
   <div class="redirect">
     Already have an account? <%= link_to('Sign in', '/') %>
   </div>
-<% end %>
+<turbo-frame>

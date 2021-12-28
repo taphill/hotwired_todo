@@ -1,0 +1,10 @@
+<div id="<%= dom_id(todo) %>" data-todo-target="todo">
+  <div>
+    <%= todo.description %>
+  </div>
+  <div>
+    <%= button_to("/users/#{current_user.id}/todos/#{todo.id}", method: :delete) do %>
+      <%= image_tag('trash.png', alt: 'Delete a todo') %>
+    <% end %>
+  </div>
+</div>

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  has_many :todos, dependent: :destroy
+
   has_secure_password
 
   validates :username, presence: true, uniqueness: true
@@ -13,6 +15,4 @@ class User < ApplicationRecord
 
     errors.add :password, 'must use at least: 1 uppercase, 1 lowercase, and 1 special character'
   end
-
-  # def self.authenticate
 end

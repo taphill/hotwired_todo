@@ -1,6 +1,17 @@
-<%= turbo_frame_tag 'main-content' do %>
-  <div data-controller="nav">
+<turbo-frame id="main-content">
+  <div class="todo-container" data-controller="todo">
     <h1>Hello, <%= current_user.username %>!</h1>
     <h2>Here's whats on your todo list:</h2>
+    <div class="todo-content">
+      <div id="todo-list">
+        <%= render partial: 'users/todos/todo', collection: current_user.todos %>
+      </div>
+
+      <%= form_with(url: "/users/#{current_user.id}/todos") do |form| %>
+        <%= form.text_field :description, data: { todo_target: 'description', action: 'todo#enableButton' }%>
+
+        <%= form.submit 'Add todo', id: 'add-todo-button', disabled: true %>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</turbo-frame>

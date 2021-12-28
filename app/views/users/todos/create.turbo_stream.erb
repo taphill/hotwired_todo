@@ -1,0 +1,4 @@
+<%= turbo_stream.append 'todo-list' do %>
+  <%= render partial: 'todo', locals: { todo: @todo, current_user: current_user } %>
+<% end %>
+  

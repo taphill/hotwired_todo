@@ -1,0 +1,43 @@
+.todo-container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.todo-content {
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 50%;
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background-color: var(--accent-bg);
+}
+
+#todo-list {
+  display: flex;
+  flex-flow: column wrap;
+  margin-bottom: 1rem;
+}
+
+#todo-list div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#todo-list button {
+  border: none;
+  background-color: var(--accent-light);
+  padding: 0.1rem;
+}
+
+#todo-list button img {
+  width: 1.5rem;
+}
+
+.todo-content form input {
+  width: 100%;
+}
+

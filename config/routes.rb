@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   post 'signin', to: 'logins#create'
   delete 'signout', to: 'logins#destroy'
 
-  resources :users, only: [:create]
+  resources :users, only: [:create] do
+    scope module: 'users' do
+      resources :todos, only: [:create, :destroy]
+    end
+  end
 end

@@ -4,14 +4,14 @@
 /*   clip-path: polygon(5% 10%, 46% 1%, 46% 10%, 100% 0, 95% 90%, 31% 100%, 31% 90%, 0% 100%); */
 /* } */
 
-#main-content form {
+.signin-signup-form {
   display: flex;
   flex-direction: column;
   width: 50%;
   margin: 8rem 0 0 0;
 }
 
-#main-content form .password-field {
+.signin-signup-form .password-field {
   display: flex;
   flex-direction: column;
 }
