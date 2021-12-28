@@ -1,3 +1,6 @@
 <%= turbo_frame_tag 'main-content' do %>
-  <h1>Hello, <%= current_user.username %>!</h1>
+  <div data-controller="nav">
+    <h1>Hello, <%= current_user.username %>!</h1>
+    <h2>Here's whats on your todo list:</h2>
+  </div>
 <% end %>

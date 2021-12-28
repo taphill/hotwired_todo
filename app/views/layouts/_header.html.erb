@@ -3,10 +3,7 @@
     <%= image_tag('icon.png', alt: 'Icon') %>
     <p>TODO</p>
   <% end %>
-  <div id="nav">
-    <% if current_user %>
-      <p>Hello, <%= current_user.username %>!</p>
-      <%= button_to('Sign out', "/sessions/#{current_user.id}", method: :delete) %>
-    <% end %>
+  <div id="nav" class="hidden">
+    <%= button_to('Sign out', "/signout", method: :delete) %>
   </div>
 </header>

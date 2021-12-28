@@ -13,4 +13,6 @@ class User < ApplicationRecord
 
     errors.add :password, 'must use at least: 1 uppercase, 1 lowercase, and 1 special character'
   end
+
+  # def self.authenticate
 end
