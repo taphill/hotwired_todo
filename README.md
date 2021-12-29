@@ -1,24 +1,29 @@
-# README
+# Hotwired Todo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple single page application to experiment with the Hotwire tech stack which is now included by default in Rails 7.
 
-Things you may want to cover:
+## Turbo-Frames
 
-* Ruby version
+Turbo-frames are the main mechanism used to create this Rails SPA. You'll notice that the URL never changes even when navigating to new content, just like one would expect with a React SPA.
 
-* System dependencies
+This is done by using a turbo-frame that I referenced by the ID of `main-content`. All views and partials within the main section of the HTML document are wrapped by this turbo-frame.
 
-* Configuration
+```html
+<body>
+  <header></header>
+  <main>
+    <turbo-frame id="main-content">
+      <!-- Content goes here -->
+    </turbo-frame>  
+  </main>
+  <footer></footer>
+</body>
+```
 
-* Database creation
+## Turbo-Streams
 
-* Database initialization
+## Stimulus
 
-* How to run the test suite
+I found Stimulus really simple and convenient to use for adding sprinkles of javascript where needed. The largest Stimulus controller for this application is the [password_controller](app/javascript/controllers/password_controller.js) which renders different images to provide the user feedback as to when their password meets the requirements being enforced by the [User](app/models/user.rb) model. 
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![](https://s10.gifyu.com/images/password_validation.gif)
