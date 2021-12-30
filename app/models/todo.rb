@@ -13,12 +13,12 @@ class Todo < ApplicationRecord
   # after_destroy_commit :remove_todo
 
   private
-  
+
   def add_todo
     broadcast_append_to(
       'todos',
       partial: 'todos/todo',
-      locals: { todo: self, current_user: user},
+      locals: { todo: self, current_user: user },
       target: 'todo-list'
     )
   end

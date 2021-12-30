@@ -1,0 +1,18 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4rem;
+  background-color: var(--disabled);
+  clip-path: polygon(5% 10%, 46% 1%, 46% 10%, 100% 0, 95% 90%, 31% 100%, 31% 90%, 0% 100%);
+}
+
+.not-found h1 {
+  margin: 6rem 8rem;
+  text-align: center;
+}
+
+.not-found img {
+  margin: 0 4rem 4rem 4rem;
+  width: 12rem;
+}

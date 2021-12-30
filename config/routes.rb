@@ -10,4 +10,6 @@ Rails.application.routes.draw do
       resources :todos, only: [:create, :destroy]
     end
   end
+
+  match '*path', to: 'root#not_found', via: :all
 end

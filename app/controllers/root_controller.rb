@@ -8,4 +8,6 @@ class RootController < ApplicationController
   def show
     render :index unless current_user
   end
+
+  def not_found; end
 end
