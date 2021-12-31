@@ -13,5 +13,10 @@
         <%= form.submit 'Add todo', id: 'add-todo-button', disabled: true %>
       <% end %>
     </div>
+    <div class="todo-counter">
+      <%= turbo_stream_from 'todos' %>
+      <h2>Global Counter</h2>
+      <h3>Total todos needing to be done: <span id="todo-count"><%= Todo.count %></span></h3>
+    </div>
   </div>
 </turbo-frame>
